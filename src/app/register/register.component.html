@@ -1,0 +1,83 @@
+<div class="container">
+ 
+    <div class="row">
+      <form #RegisterForm="ngForm" (ngSubmit)="RegisterDetails(RegisterForm)">
+      <div class="col-md-offset-3 col-md-3">
+          <div class="form-Register">
+          <h4>Register</h4>
+         <label for="text"> FirstName</label><input type="text" 
+          required
+          ngModel
+          #firstName="ngModel"
+          name="firstName"
+          class="form-control input-sm chat-input"
+          placeholder="firstName" /><br>
+          <div *ngIf="firstName.touched && firstName.invalid">
+            <div *ngIf="firstName.errors['required']">firstName should not be empty</div>
+          </div>
+          <label for="text">LastName</label><input type="text" 
+          required
+          ngModel
+          #lastName="ngModel"
+          name="lastName"
+          class="form-control input-sm chat-input"
+          placeholder="lastName" /><br>
+          <div *ngIf="lastName.touched && lastName.invalid">
+            <div *ngIf="lastName.errors['required']">Lastname should not be empty</div>
+          </div>
+          
+
+          <label for="text">MobileNumber</label><input type="number" 
+          required
+          ngModel
+          #mobileNumber="ngModel"
+          maxlength="10"
+          minlength="10"
+          name="mobileNumber"
+          #name="ngModel"
+          regEx="[a-zA-Z]"
+          class="form-control input-sm chat-input"
+          placeholder="mobileNumber" /><br>
+          <div *ngIf="mobileNumber.touched && mobileNumber.invalid">
+            <div *ngIf="mobileNumber.errors['required']">Mobilenumber should not be empty</div>
+            <div *ngIf="mobileNumber.errors['minlength']">You Should enter exact 10 digits</div>
+          </div>
+         <label for="text"> EmailId</label><input type="email" 
+          required
+          ngModel
+          #emailId="ngModel"
+          minlength="6"
+          maxlength="20"
+          name="emailId"
+          class="form-control input-sm chat-input"
+          placeholder="emailId" /><br>
+          <div *ngIf="emailId.touched && emailId.invalid">
+            <div *ngIf="emailId.errors['required']">Email should not be empty</div>
+            <div *ngIf="emailId.errors['minlength']">You Should enter atleast 6 characters</div>
+            </div>
+           <label for="psw"> Password </label><input type="password" 
+            required
+            ngModel
+            #password="ngModel"
+            minlength="5"
+            maxlength="12"
+            name="password"
+            class="form-control input-sm chat-input"
+            placeholder="password" /><br>
+            <div *ngIf="password.touched && password.invalid">
+              <div *ngIf="password.errors['required']">password should not be empty</div>
+              <div *ngIf="password.errors['minlength']">You Should enter atleast 5 characters</div>
+            <div *ngIf="password.errors['minlength']">You Should enter atleast 4 digits</div>
+            </div>
+          
+          <div class="wrapper">
+          <span class="group-btn">     
+              <button  class="btn btn-primary btn-md" [disabled]="RegisterForm.invalid">Register</button>
+          </span>
+          </div>
+          </div>
+      </div>
+    </form>
+  </div>
+
+</div>

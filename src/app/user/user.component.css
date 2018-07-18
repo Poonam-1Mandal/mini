@@ -1,0 +1,16 @@
+.pic{
+    
+
+    
+    float: left;
+    width:400px;
+    height:300px;
+
+    border: 1px solid gray;
+
+}
+
+ul li{
+    list-style-type: none;
+}
+

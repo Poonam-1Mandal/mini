@@ -1,0 +1,22 @@
+<form #loginForm= "ngForm" (ngSubmit)="authenticateUser(loginForm)">
+	<div class="container">
+	{{authenticationResponse.message}}
+	<label><b>EmailId</b></label>
+	<input type="text" placeholder="Enter emailId" 
+	required ngModel name="emailId"
+	#emailId="ngModel">
+	<div *ngIf="emailId.touched && emailId.invalid">
+	<div *ngIf="emailId.errors.required">Enter valid Email</div>
+	</div>
+	<label><b>Password</b></label>
+	<input type="password" placeholder="Enter password" required ngModel name="password"
+	minlength="6"
+	maxlength="12"
+	#password="ngModel">
+	<div *ngIf="password.touched && password.invalid">
+	<div *ngIf="password.errors.required">Enter valid Password</div>
+	</div>
+	<div>
+	<button [disabled]="loginForm.invalid">Sign Me in!</button>
+	
+	</div> 

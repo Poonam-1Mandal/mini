@@ -1,0 +1,15 @@
+ Title:
+<input type="text" [(ngModel)]="title">
+<br>
+
+
+<button (click)="getImageDetail()">Get your image</button>
+
+
+<ul>
+        <li *ngFor="let p of photo">
+                <a href="{{p.largeImageURL}}">
+                        <img src="{{p.largeImageURL}}" class="pic">
+                </a>
+        </li>
+</ul>
